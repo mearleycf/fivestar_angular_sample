@@ -1,0 +1,64 @@
+<app-template-base>
+  <div class="page-content">
+    <app-container-card isFlat="true">
+      <div content>
+        <p class="question">What product are you interested in?</p>
+        <app-type-select></app-type-select>
+      </div>
+    </app-container-card>
+    <app-container-card isFlat="true">
+      <div content>
+        <p class="question">Do you currently have any active policies with Progressive?</p>
+        <app-type-radio [radioButtons]="['Yes', 'No']"></app-type-radio>
+      </div>
+    </app-container-card>
+    <app-container-card isFlat="true">
+      <div content>
+        <p class="question">When would you like your coverage to start?</p>
+        <app-type-date isPlaceholder="Coverage Effective Date"></app-type-date>
+      </div>
+    </app-container-card>
+    <app-container-card isFlat="true">
+      <div content>
+        <p class="question">Percent of work contracted out to others?</p>
+        <app-type-radio [radioButtons]="['<10%','10%-25%','25%-40%','40%-50%','50%-75%','75%-100%']"></app-type-radio>
+      </div>
+    </app-container-card>
+    <app-container-card isFlat="true">
+      <div content>
+        <p class="question">Do you use day laborers or temporary employees?</p>
+        <app-type-radio [radioButtons]="['Yes', 'No']"></app-type-radio>
+      </div>
+    </app-container-card>
+    <app-container-card isFlat="true">
+      <div content>
+        <p class="question">Do/will you run background checks prior to hiring employees?</p>
+        <app-type-radio [radioButtons]="['Yes', 'No']"></app-type-radio>
+      </div>
+    </app-container-card>
+    <app-container-card isFlat="true">
+      <div content>
+        <p class="question">Do you oversee large projects that include you subcontracting all/most of the work to others?</p>
+        <app-type-radio [radioButtons]="['Yes', 'No']"></app-type-radio>
+      </div>
+    </app-container-card>
+    <app-container-card isFlat="true">
+      <div content>
+        <p class="question">Years of industry experience?</p>
+        <app-type-select></app-type-select>
+      </div>
+    </app-container-card>
+    <app-container-card isFlat="true">
+      <div content>
+        <p class="question">Do you use day laborers or temporary employees?</p>
+        <app-type-radio [radioButtons]="['0%-35%','36%-50%','51%-75%','76%-100%']"></app-type-radio>
+      </div>
+    </app-container-card>
+    <app-container-card isFlat="true">
+      <div content>
+        <p class="question">Any exterior work above three stories?</p>
+        <app-type-radio [radioButtons]="['Yes', 'No']"></app-type-radio>
+      </div>
+    </app-container-card>
+  </div>
+</app-template-base>

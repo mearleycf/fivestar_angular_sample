@@ -1,0 +1,5 @@
+<mat-form-field class="isDate">
+  <input matInput [matDatepicker]="standardDatepicker" placeholder="{{ isPlaceholder }}" tabindex="0">
+  <mat-datepicker-toggle matSuffix [for]="standardDatepicker"></mat-datepicker-toggle>
+  <mat-datepicker touchUi="true" #standardDatepicker></mat-datepicker>
+</mat-form-field>

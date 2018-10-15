@@ -1,0 +1,24 @@
+.menu-text {
+    /* width: 90%; */
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    color: #71B3FF;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: .875rem;
+  }
+
+  .menu-text .menu-item {
+    padding-right: 3vw;
+    list-style: none;
+  }
+
+  .menu-text .menu-item:last-child {
+    padding-right: 0;
+  }
+
+  .menu-text .menu-item.active {
+    font-size: 1rem;
+    color: var(--neutral-black);
+  }

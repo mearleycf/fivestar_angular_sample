@@ -1,0 +1,7 @@
+mat-icon {
+    padding-right: 5px;
+}
+a[href^="tel:"] {
+  text-decoration: none;
+  color: inherit;
+}

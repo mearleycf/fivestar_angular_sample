@@ -1,0 +1,15 @@
+.circle-icon-container {
+  width: 72px;
+  height: 72px;
+  border: 2px solid var(--neutral-cool-dark);
+  border-radius: 38px;
+}
+
+.circle-icon-container mat-icon {
+  color: var(--neutral-cool-dark);
+  font-size: 36px;
+  height: 36px;
+  width: 36px;
+}
+
+/* this solution is temporary until i can dynamically set a border around a scalable svg */

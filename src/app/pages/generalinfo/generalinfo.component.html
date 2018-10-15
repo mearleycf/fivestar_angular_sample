@@ -1,0 +1,54 @@
+<app-template-base sectionName="General Info" id="generalinfoPage" currentProgress="33.3">
+  <div class="page-content flex center is-column marginLeftTenPercent">
+    <div class="flex is-column width80vw center margin0auto">
+      <h2>Business Type: {{ businessType }}</h2>
+    </div>
+    <div class="underline-divider"></div>
+
+    <app-container-card isFlat="true">
+        <div content>
+          <p class="question">Any framing or construction of new buildings or additions?</p>
+          <app-type-radio [radioButtons]="['Yes', 'No']"></app-type-radio>
+        </div>
+      </app-container-card>
+
+      <app-container-card isFlat="true">
+          <div content>
+            <p class="question">Any new construction in multi-home/tract home, condo, townhouse, apartments, or co-ops?</p>
+            <app-type-radio [radioButtons]="['Yes', 'No']"></app-type-radio>
+          </div>
+        </app-container-card>
+
+    <app-container-card isFlat="true">
+        <div content>
+          <p class="question">Percent of work subcontracted out to others?</p>
+          <app-type-select></app-type-select>
+        </div>
+      </app-container-card>
+
+    <app-container-card isFlat="true">
+        <div content>
+          <p class="question">Years of industry experience?</p>
+          <app-type-radio [radioButtons]="['No Experience','1+ Yrs', '3+ Yrs','5+ Yrs','10+ Yrs','20+ Yrs']"></app-type-radio>
+        </div>
+      </app-container-card>
+
+    <app-container-card isFlat="true">
+      <div content>
+        <p class="question">Any roofing work? (other than new additions)</p>
+        <app-type-radio [radioButtons]="['Yes', 'No']"></app-type-radio>
+      </div>
+    </app-container-card>
+
+    <app-container-card isFlat="true">
+        <div content>
+          <p class="question">Any exterior work above three stories?</p>
+          <app-type-radio [radioButtons]="['Yes', 'No']"></app-type-radio>
+        </div>
+      </app-container-card>
+
+    <div class="flex is-row center">
+      <app-advance-button buttonText="Next, Contact Info" [navigateTo]="['demo/contactinfo']"></app-advance-button>
+    </div>
+  </div>
+</app-template-base>

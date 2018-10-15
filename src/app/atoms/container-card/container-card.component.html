@@ -1,0 +1,22 @@
+<mat-card [ngClass]="{'mat-elevation-z0': cardIsFlat()}">
+  <mat-card-header *ngIf="displayHeader()">
+    <mat-card-title *ngIf="displayTitle()">{{ title }}</mat-card-title>
+    <mat-card-subtitle *ngIf="displaySubTitle()">{{ subtitle }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <ng-content select="[content]"></ng-content>
+  </mat-card-content>
+  <mat-card-actions *ngIf="displayButtons()" class="flex isRow align-start start">
+    <div *ngFor="let button of actionButtons">
+      <button mat-raised-button color="primary">{{ button }}</button>
+    </div>
+  </mat-card-actions>
+  <mat-card-actions *ngIf="displayRadioButtons()" class="flex isRow align-start start radioMatCardActions">
+    <app-type-radio [radioButtons]="radioButtons"></app-type-radio>
+  </mat-card-actions>
+  <mat-card-footer *ngIf="displayFooter()">
+    <ng-content select="[footer]"></ng-content>
+  </mat-card-footer>
+</mat-card>
+
+<!-- CRAP I NEED TO REFACTOR TO USE MAT RADIO! -->

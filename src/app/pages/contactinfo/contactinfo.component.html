@@ -1,0 +1,44 @@
+<app-template-base sectionName="Contact Info" id="contactinfoPage" currentProgress="50">
+  <div class="page-content flex center is-column marginLeftTenPercent">
+
+    <div class="flex is-column width80vw center margin0auto">
+      <h2>Contact Information</h2>
+    </div>
+    <div class="underline-divider"></div>
+
+    <app-container-card isFlat="true">
+      <div content>
+        <app-type-input isPlaceholder="First Name" isInputType="text"></app-type-input>
+        <app-type-input isPlaceholder="Last Name" isInputType="text"></app-type-input>
+        <app-type-input isPlaceholder="Title" isInputType="text"></app-type-input>
+        <app-type-input isPlaceholder="Business Name" isInputType="text"></app-type-input>
+        <app-type-input isPlaceholder="Telephone Number" isInputType="text"></app-type-input>
+        <app-type-input isPlaceholder="Email Address" isInputType="text"></app-type-input>
+        <app-type-input isPlaceholder="Street" isInputType="text"></app-type-input>
+        <app-type-input isPlaceholder="Secondary Street" isInputType="text"></app-type-input>
+        <app-type-input isPlaceholder="City" isInputType="text"></app-type-input>
+        <app-type-autocomplete placeholder="State" isInputType="text"></app-type-autocomplete>
+        <app-type-input isPlaceholder="Zip Code" isInputType="text"></app-type-input>
+      </div>
+    </app-container-card>
+
+    <app-container-card isFlat="true">
+      <div content>
+        <p class="question">Is your business operated out of your home?</p>
+        <app-type-radio [radioButtons]="['Yes', 'No']"></app-type-radio>
+      </div>
+    </app-container-card>
+
+    <app-container-card isFlat="true">
+      <div content>
+        <p class="question">Other than the business address provided abovec, how many additional locations does your business own or rent?</p>
+        <app-type-radio [radioButtons]="['0', '1-4','5-10','11-25','26-50','51-100','101+']"></app-type-radio>
+      </div>
+    </app-container-card>
+
+    <div class="flex center">
+      <app-advance-button buttonText="Next, Questions" [navigateTo]="['demo/addlquestions']"></app-advance-button>
+    </div>
+
+  </div>
+</app-template-base>

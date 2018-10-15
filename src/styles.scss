@@ -1,0 +1,1560 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/theming";
+@include mat-core();
+@import 'theme.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900');
+
+// Create a config with the default typography levels.
+$config: mat-typography-config();
+
+/* variables */
+
+:root {
+  --brand-primary: #007CB9;
+  --brand-secondary: #0a3360;
+  --brand-tertiary: #0168E0;
+  --brand-light: #f3f9fc;
+  --brand-alternate: #ff8a00;
+  --brand-bright: #25B7FE;
+  --brand-alert: #D41659;
+  --neutral-cool-dark: #405e7c;
+  --neutral-cool-medium: #cedae7;
+  --neutral-cool-light: #e6edf4;
+  --neutral-cool-ultra-light: #f2f7fa;
+  --neutral-black: #2d2d2d;
+  --neutral-light: #767676;
+  --neutral-super-light: #979797;
+  --progressive-gray: #a6a6a6;
+  --neutral-ultra-light: #f3f3f3;
+  --neutral-white: #fdfdfd;
+  --background-white: #fdfdfd;
+  --base-font-size: 14px;
+}
+
+// $box-shadow-primary:
+//   0 3px 1px -2px rgba(0,0,0,.2),
+//   0 2px 2px 0 rgba(0,0,0,.14),
+//   0 1px 5px 0 rgba(0,0,0,.12);
+
+// $box-shadow-secondary:
+//   0 2px 4px rgba(0,0,0,.61);
+
+$box-shadow-primary: 0 0 0 0 transparent;
+$box-shadow-secondary: 0 0 0 0 transparent;
+$copy-text: var(--neutral-black);
+
+/* overrides */
+
+html {
+  font-size: var(--base-font-size);
+}
+
+p {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-start: 0;
+  -webkit-margin-end: 0;
+}
+
+body {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: var(--base-font-size);
+  background-color: var(--background-white);
+  color: $copy-text;
+}
+
+h1,
+h2,
+h4 {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+  color: $copy-text;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.275rem;
+  color: $copy-text;
+}
+
+h5 {
+  font-size: 1.275rem;
+  color: $copy-text;
+}
+
+p,
+ul,
+ol {
+  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #707070;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+.italics {
+  font-style: italic;
+}
+
+ul li {
+  padding-top: .5rem;
+}
+
+p.secondary {
+  font-size: 14px;
+}
+
+p.disclaimer {
+  font-size: 12px;
+}
+
+a,
+p.anchor {
+  color: var(--brand-primary);
+}
+
+a:hover,
+p.anchor_hover {
+  color: var(--neutral-cool-dark);
+  text-decoration: underline;
+}
+
+a:visited,
+p.anchor_visited {
+  color: var(--neutral-cool-dark);
+}
+
+div.code-example {
+  width: 100%;
+}
+
+div.code-example figure pre {
+  overflow-x: scroll;
+}
+
+label {
+  font-size: 16px;
+  color: var(--neutral-cool-dark);
+  font-weight: 700;
+}
+
+mat-label {
+  color: var(--neutral-cool-dark);
+}
+
+.caption {
+  font-size: 1rem;
+  color: var(--neutral-light);
+}
+
+.footer {
+  background-color: var(--neutral-cool-light);
+  height: 20rem;
+  width: 100vw;
+  border-top: 1px solid rgba(200, 200, 200, .4);
+  margin-top: 100px;
+}
+
+#pgr .cdk-overlay-pane {
+  position: relative;
+  // margin-top: 58px;
+  width: max-content;
+}
+
+#pgr .cdk-overlay-pane .mat-select-panel {
+  border: 1px solid var(--brand-primary);
+  border-radius: 2px;
+}
+
+//helpers
+.relative {
+  position: relative;
+}
+
+.no-bullets {
+  list-style: none;
+}
+
+/* layouts */
+
+// basic flex rules
+#pgr .flex {
+  display: flex
+}
+
+#pgr .is-column {
+  flex-direction: column;
+}
+
+#pgr .is-row {
+  flex-direction: row
+}
+
+#pgr .is-row-reverse {
+  flex-direction: row-reverse
+}
+
+#pgr .is-column-reverse {
+  flex-direction: column-reverse
+}
+
+#pgr .wrap {
+  flex-wrap: wrap
+}
+
+#pgr .nowrap {
+  flex-wrap: nowrap;
+}
+
+//justify content
+#pgr .space-between {
+  justify-content: space-between
+}
+
+#pgr .space-around {
+  justify-content: space-around
+}
+
+#pgr .end {
+  justify-content: flex-end
+}
+
+#pgr .start {
+  justify-content: flex-start
+}
+
+#pgr .center {
+  justify-content: center
+}
+
+//align items
+#pgr .align-center {
+  align-items: center
+}
+
+#pgr .align-start {
+  align-items: flex-start
+}
+
+#pgr .align-end {
+  align-items: flex-end
+}
+
+#pgr .align-stretch {
+  align-items: stretch
+}
+
+#pgr .align-baseline {
+  align-items: baseline
+}
+
+//align-self
+#pgr .self-center {
+  align-self: center;
+}
+
+#pgr .self-start {
+  align-self: start;
+}
+
+#pgr .self-end {
+  align-self: end;
+}
+
+#pgr .self-flex-end {
+  align-self: flex-end;
+}
+
+#pgr .self-flex-start {
+  align-self: flex-start;
+}
+
+#pgr .self-self-start {
+  align-self: self-start;
+}
+
+#pgr .self-self-end {
+  align-self: self-end;
+}
+
+#pgr .self-left {
+  align-self: left;
+}
+
+#pgr .self-right {
+  align-self: right;
+}
+
+#pgr .self-baseline {
+  align-self: baseline;
+}
+
+#pgr .self-first-baseline {
+  align-self: first baseline;
+}
+
+#pgr .self-last-baseline {
+  align-self: last baseline;
+}
+
+#pgr .self-stretch {
+  align-self: stretch;
+}
+
+#pgr .self-safe-center {
+  align-self: safe center;
+}
+
+#pgr .self-unsafe-center {
+  align-self: unsafe center;
+}
+
+/* automated centering for certain objects */
+
+.margin0auto {
+  margin: 0 auto
+}
+
+.margin1rem {
+  margin: 1rem;
+}
+
+.marginBottom0 {
+  margin-bottom: 0;
+}
+
+.marginLeftTenPercent {
+  margin-left: 10%;
+}
+
+.marginLeft20vw {
+  margin-left: 20vw;
+}
+
+.marginLeft40vw {
+  margin-left: 40vw;
+}
+
+.marginLeft60vw {
+  margin-left: 60vw;
+}
+
+.marginLeft80vw {
+  margin-left: 80vw;
+}
+
+//width settings
+#pgr .fill-available {
+  width: stretch;
+}
+
+#pgr .width330 {
+  width: 330px;
+}
+
+#pgr .width5vw {
+  width: 5vw
+}
+
+#pgr .width10vw {
+  width: 10vw
+}
+
+#pgr .width20vw {
+  width: 20vw
+}
+
+#pgr .width30vw {
+  width: 30vw
+}
+
+#pgr .width40vw {
+  width: 40vw
+}
+
+#pgr .width50vw {
+  width: 50vw
+}
+
+#pgr .width60vw {
+  width: 60vw
+}
+
+#pgr .width67vw {
+  width: 67vw;
+}
+
+#pgr .width70vw {
+  width: 70vw
+}
+
+#pgr .width80vw {
+  width: 80vw
+}
+
+#pgr .width90vw {
+  width: 90vw
+}
+
+#pgr .width97vw {
+  width: 97vw
+}
+
+#pgr .width100vw {
+  width: 100vw
+}
+
+#pgr .height370 {
+  height: 370px
+}
+
+div[content] {
+  display: flex;
+  flex-direction: column;
+}
+
+//for demo only
+.atoms-page-viewport {
+  width: 8.57rem;
+  height: 100%;
+  margin-top: 1.25rem;
+}
+
+/* header */
+
+.headerImage {
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* temp fix ignoring parallax */
+  height: 13rem;
+  position: fixed;
+}
+
+// global overrides of material components
+/* inputs */
+
+#pgr mat-form-field.pgr-input,
+#pgr mat-form-field.pgr-input .mat-input-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#pgr .mat-input-underline,
+#pgr .mat-form-field-underline,
+#pgr .mat-form-field-underline {
+  background-color: transparent;
+  height: 0;
+  width: 0;
+}
+
+#pgr mat-form-field:not(.isDate) .mat-input-suffix {
+  position: relative;
+  top: 5px;
+  left: 5px;
+}
+
+#pgr mat-form-field.isDate .mat-input-suffix {
+  position: relative;
+  left: 5px;
+  top: 0;
+}
+
+mat-form-field .mat-input-infix.mat-form-field-infix {
+  flex: auto;
+  width: 300px;
+  padding: 0;
+  border: none;
+}
+
+mat-form-field .mat-input-infix.mat-form-field-infix {
+  border-top: 0 solid transparent;
+}
+
+mat-form-field.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  transform: translateY(-1.55rem) scale(.75) perspective(100px) translateZ(0.001px);
+}
+
+#pgr .mat-form-field-label {
+  color: $copy-text;
+}
+
+//here b/c it didn't work when scoped to component
+#pgr .mat-form-field-label-wrapper {
+  overflow: visible;
+}
+
+#pgr .mat-form-field.mat-form-field-type-mat-select:not(.mat-form-field-should-float) .mat-form-field-label-wrapper {
+  top: 0;
+  left: 1rem;
+}
+
+#pgr .mat-select-value-text span {
+  position: relative;
+}
+
+/* mat-card */
+
+app-container-card {
+  width: 67vw;
+}
+
+#pgr mat-card  {
+  // width: 80vw;
+  margin: 1rem;
+}
+//from material
+#pgr .mat-card {
+  border: 2px var(--neutral-light);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+#pgr mat-card.mat-card {
+  display: block;
+  position: relative;
+  padding: 1rem 2rem 1rem 1.5rem;
+  border-radius: 2px;
+  background-color: transparent;
+}
+
+#pgr .mat-card-actions {
+  max-width: 56rem;
+  flex-wrap: wrap;
+  height: min-content;
+}
+
+#pgr mat-card.mat-card.coverage {
+  border-radius: 8px;
+  padding: 0;
+  transition: scale 500ms;
+}
+
+#pgr mat-card.mat-card.container-coverage {
+  padding: 0;
+  border-radius: 8px;
+  border: 1px solid var(--neutral-light);
+  max-width: 67rem;
+}
+
+#pgr mat-card .coverage-content {
+  padding: 0 0 1rem 7.875rem;
+  margin-top: 1.25rem;
+}
+
+#pgr mat-card .coverage-content .covers {
+  margin-top: 2.25rem;
+}
+
+#pgr mat-card.mat-card.container-coverage:hover {
+  border-radius: 8px;
+  border: 2px solid var(--brand-primary);
+  // transform: scale(1.005);
+}
+
+#pgr mat-card.mat-card.container-coverage:hover .mat-checkbox {
+  background: rgba(0, 124, 185, .2);
+}
+
+#pgr .mat-card.container-coverage ul {
+  padding: 0;
+}
+
+#pgr .mat-card.container-coverage ul li {
+  margin-right: 2rem;
+  flex-basis: 17rem;
+}
+
+#pgr mat-card.mat-card.container-coverage .mat-card-header {
+  border-radius: 7px 7px 0 0;
+  height: 4.875rem;
+  border-bottom: 1px solid var(--neutral-light);
+  position: relative;
+}
+
+#pgr .mat-card.mat-card.container-coverage:hover .mat-card-header {
+  border-bottom: 2px solid var(--brand-primary);
+}
+
+#pgr mat-card.container-coverage .mat-card-header div[header] {
+  width: stretch;
+}
+
+
+#pgr mat-card.container-coverage .mat-card-header h2 {
+  width: stretch;
+  height: stretch;
+  margin: 0;
+  border-radius: 0 7px 0 0;
+  padding: 1.25rem;
+  transition: background-color 90ms ease-in;
+  font-weight: 500;
+  font-size: 1.75rem;
+}
+
+.mat-checkbox-checked ~ h2 {
+  background-color: var(--brand-primary);
+  color: var(--neutral-white);
+}
+
+#pgr mat-card.container-coverage .mat-card-header-text {
+  margin: 0 0 0 0;
+}
+
+#pgr mat-card.container-coverage .mat-checkbox {
+  margin: 0 0 0 0;
+  // border-style: none solid none none;
+  // border-width: 0 1px 0 0;
+  // border-color: var(--neutral-cool-dark);
+  width: 6.5rem;
+  height: 4.875rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pgr mat-card.container-coverage .mat-checkbox-checked {
+  // border-right: 0px;
+}
+
+//putting in the plus symbol when the checkbox is unchecked
+.checkbox-unchecked {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 5.1rem;
+  top: 35px;
+  z-index: 10;
+}
+
+.checkbox-unchecked .mat-icon {
+  position: absolute;
+  width: 0;
+  color: var(--brand-primary);
+  font-weight: 700;
+}
+
+#pgr mat-card.container-coverage .mat-checkbox:not(:checked) .mat-checkbox-background {
+  font-weight: 700;
+}
+
+#pgr mat-card.container-coverage .mat-checkbox:not(:checked) .mat-checkbox-background::before {
+  font-weight: 700;
+}
+
+#pgr mat-card.container-coverage:hover .mat-checkbox:not(:checked) .mat-checkbox-background::before {
+  content: "ADD";
+  position: absolute;
+  color: var(--brand-primary);
+  bottom: .75rem;
+  font-weight: 700;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+
+#pgr mat-card.container-coverage .mat-checkbox-checked .mat-checkbox-background::before {
+  content: "";
+  opacity: 0;
+}
+
+#pgr mat-card.container-coverage .mat-checkbox-checked .mat-checkbox-background {
+  border-radius: 5px 0 0 0;
+}
+
+#pgr mat-card.container-coverage .mat-checkbox-checked .mat-checkbox-checkmark {
+  height: 4.875rem;
+  width: 6.5rem;
+}
+
+#pgr mat-card.container-coverage .mat-checkbox-frame {
+  transition: border-color 90ms cubic-bezier(0,0,0,0);
+  border-width: 0px;
+}
+
+#pgr mat-card.container-coverage .mat-checkbox-inner-container {
+  width: 6.5rem;
+  height: 4.875rem;
+  border-right: 1px solid var(--neutral-light);
+  border-left: 1px solid var(--neutral-light);
+  background-color: var(--brand-light);
+  border-radius: 8px 0 0 0;
+}
+
+#pgr .mat-card.container-coverage:hover .mat-checkbox-inner-container {
+  border-left: 2px solid var(--brand-primary);
+  border-right: 2px solid var(--brand-primary);
+}
+
+// #pgr .mat-card-content {
+//   padding-left: 7.875rem
+// }
+
+#pgr .mat-card-content .coverages-right {
+  margin: 1.25rem 4rem 0 4rem;
+  text-align: center;
+  min-width: 11rem;
+}
+
+#pgr .coverage-viewport {
+  width: 8.57rem;
+  height: 100%;
+  margin-top: 1.25rem;
+}
+
+//animation of logo https://codepen.io/personable/pen/jPMXPv
+
+.badge-fill-default {
+  fill: var(--brand-secondary);
+}
+
+.container-coverage-checked .badge-fill-default {
+  fill: var(--brand-primary);
+}
+
+// *** Start Spin Cycle code ***
+@mixin ic-Spin-cycle-animation (
+    $animation-name: spin-cycle,
+    $animation-grow-to: 1,
+    $animation-shrink-to: 1,
+    $color-spin-highlight: #007CB9,
+    $color-spin-base: black,
+    $color-spin-final: #007cb9
+  ) {
+    @keyframes #{$animation-name} {
+    0% {
+      fill: $color-spin-highlight;
+      transform: scale($animation-grow-to);
+    }
+    60% {
+      fill: $color-spin-base;
+      transform: scale($animation-shrink-to);
+    }
+    100% {
+      fill: $color-spin-final;
+    transform: scale(1);
+    }
+  }
+}
+
+@mixin ic-Spin-cycle-branding(
+    $animation-name: spin-cycle,
+    $animation-grow-to: 1,
+    $animation-shrink-to: 1,
+    $spin-width: 90px,
+    $spin-height: 109px,
+    $spin-margin: 0rem,
+    $color-spin-base: rgba(white, 0),
+    $color-spin-highlight: var(--brand-secondary),
+    $color-spin-final: var(--brand-secondary),
+    $number-of-paths: 2
+  ) {
+  @include ic-Spin-cycle-animation($animation-name, $animation-grow-to, $animation-shrink-to, $color-spin-highlight, $color-spin-base, $color-spin-final);
+  margin: $spin-margin;
+  width: $spin-width;
+  height: $spin-height;
+  svg {
+    width: $spin-width; height: $spin-height;
+    * {
+      fill: $color-spin-final;
+      animation-name: $animation-name;
+      animation-duration: #{$number-of-paths*0.1}s;
+      @for $i from 1 through ($number-of-paths) {
+        &:nth-of-type(#{$i}) {
+          animation-delay: #{$i*0.1}s;
+        }
+      }
+    }
+  }
+}
+
+%ic-Spin-cycle {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  overflow: visible;
+  svg {
+    display: block;
+    overflow: visible;
+    * {
+      transform: translate3d(0,0,0);
+      transform-origin: center;
+      animation-iteration-count: 1;
+    }
+  }
+}
+
+// IMPORTANT HACK FOR FIREFOX. FF has a bug with transform-origin and inline SVGs that pretty much ruins the whole scaling effect. My solution for now is just to remove the scale transforms from Firefox, which leaves the color animation only
+body:not(:-moz-handler-blocked) {
+  svg > * {
+    transform: none !important;
+    transform-origin: 0 0;
+  }
+}
+// END HACK
+.ic-Spin-cycle--classic {
+  @extend %ic-Spin-cycle;
+  // pass no parameters into the mixin, and you get a classic spinner
+  @include ic-Spin-cycle-branding;
+}
+
+.ic-Spin-cycle--classic-salmon-yellow,
+#pgr .mat-card.container-coverage:hover .card-is-hovered {
+  @extend %ic-Spin-cycle;
+  @include ic-Spin-cycle-branding(
+    yellow, // name your animation
+    1.005, // how BIG should the child paths scale to?
+    0.995, // how SMALL should the child paths scale to?
+    90px, // what is the width of the spinner?
+    109px, // what is the height of the spinner?
+    0rem, // what margin should be around the spinner element?
+    #a67c00, // what is the base color of the spinner?
+    #ffbf00, // what is the highlight color of the spinner?
+    url(#gold), //final color
+    15 // how many direct child paths/circles/etc. does the SVG have? Feel free to play with this to make the timing of the animation slower or faster.
+    );
+}
+
+.golden-face-gradient {
+  background: -webkit-linear-gradient(360deg, #8e7a3f 10%, #b09a51 360%); /* Chrome 10+, Saf5.1+ */
+  background: -o-linear-gradient(360deg, #8e7a3f 10%, #b09a51 360%); /* Opera 11.10+ */
+  background: linear-gradient(360deg, #8e7a3f 10%, #b09a51 360%); /* W3C */ }
+
+.ic-Spin-cycle--circles {
+  @extend %ic-Spin-cycle;
+  @include ic-Spin-cycle-branding(
+    circles, // name your animation
+    1.5, // how BIG should the child paths scale to?
+    1, // how SMALL should the child paths scale to?
+    100px, // what is the width of the spinner?
+    72px, // what is the height of the spinner?
+    12px 24px, // what margin should be around the spinner element?
+    rgba(#5f5ffe,0.5), // what is the base color of the spinner?
+    rgba(#5f5ffe, 0.8), // what is the highlight color of the spinner?
+    8 // how many direct child paths/circles/etc. does the SVG have? Feel free to play with this to make the timing of the animation slower or faster.
+    );
+}
+
+.ic-Spin-cycle--police-car {
+  @extend %ic-Spin-cycle;
+  @include ic-Spin-cycle-branding(
+    your-animation, // name your animation
+    1.1, // how BIG should the child paths scale to?
+    0.9, // how SMALL should the child paths scale to?
+    100px, // what is the width of the spinner?
+    72px, // what is the height of the spinner?
+    12px 24px, // what margin should be around the spinner element?
+    rgba(#222, 0.8), // what is the base color of the spinner?
+    #5f5ffe,  // what is the highlight color of the spinner?
+    10 // how many direct child paths/circles/etc. does the SVG have? Feel free to play with this to make the timing of the animation slower or faster.
+    );
+}
+
+.ic-Spin-cycle--faces {
+  @extend %ic-Spin-cycle;
+  @include ic-Spin-cycle-branding(
+    faces, // name your animation
+    1.25, // how BIG should the child paths scale to?
+    1, // how SMALL should the child paths scale to?
+    100px, // what is the width of the spinner?
+    72px, // what is the height of the spinner?
+    12px 24px, // what margin should be around the spinner element?
+    rgba(#5f5ffe, 0.7), // what is the base color of the spinner?
+    rgba(#ef0878, 0.8), // what is the highlight color of the spinner?
+    12 // how many direct child paths/circles/etc. does the SVG have? Feel free to play with this to make the timing of the animation slower or faster.
+    );
+}
+// *** End Spin Cycle code ***
+
+// TODO this is clumsy
+#pgr .container-coverage .mat-card-content .coverages-right h1,
+#pgr .container-coverage .mat-card-content .coverages-right h2,
+#pgr .container-coverage .mat-card-content .coverages-right h3,
+#pgr .container-coverage .mat-card-content .coverages-right h4,
+#pgr .container-coverage .mat-card-content .coverages-right h5 {
+  margin: .25rem 0;
+}
+
+#pgr .mat-card.container-coverage h3 {
+  font-size: 1.16rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+}
+
+#pgr .mat-card.container-coverage h5 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: $copy-text;
+}
+
+//overriding material?
+#pgr .mat-card.container-coverage .mat-card-footer {
+  display: flex;
+  margin: 0 0 0 7.875rem;
+  padding-bottom: 2rem;
+}
+
+
+/* buttons */
+
+#pgr button {
+  margin-right: .75rem;
+}
+
+// advance button
+app-advance-button {
+  cursor: pointer;
+}
+
+.advance-button {
+  width: 37.5rem;
+  height: 6.25rem;
+  background-color: var(--brand-primary);
+  color: var(--neutral-white);
+  border-radius: .5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 6rem;
+}
+
+.advance-button:hover,
+.advance-button:active {
+  background-color: #2862a4;
+}
+
+.advance-button .text {
+  width: fit-content;
+  margin-bottom: .5rem;
+}
+
+.advance-button .icon {
+  position: absolute;
+  right: 69px;
+}
+
+.advance-button .icon .mat-icon {
+font-size: 3rem;
+font-weight: 400;
+height: 3rem;
+width: 3rem;
+margin-top: .2rem;
+}
+
+
+/* card container */
+
+//most styling is in container-card-component.scss; styling of host element has to be outside of that file
+// app-container-card:nth-of-type(odd) {
+//   background-color: var(--neutral-ultra-light);
+// }
+
+// app-container-card:nth-of-type(even) {
+//   background-color: var(--neutral-white);
+// }
+
+#pgr .mat-card[_ngcontent-c3] {
+  background-color: inherit;
+}
+
+
+#pgr mat-card.mat-card:hover {
+  background-color: #f3f9fc;
+}
+
+#pgr app-container-card .mat-card h3 {
+  color: $copy-text;
+  font-weight: 600;
+}
+
+#pgr .mat-card,
+#pgr .mat-card p,
+#pgr .mat-card ol,
+#pgr .mat-card ul {
+  color: $copy-text;
+  font-weight: 400;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.question-container {
+  margin-bottom: 1rem;
+}
+
+#pgr p.question {
+  font-size: 1.25rem;
+  color: $copy-text;
+  font-weight: 700;
+  margin: 0 0 0 0;
+}
+
+//make the separator line darker for a gray card
+#pgr app-container-card:nth-of-type(odd) .mat-card-footer {
+  border-top: 1px solid #a2a2a2;
+}
+
+#pgr app-container-card:nth-of-type(even) .mat-card-footer {
+  border-top: 1px solid #e1e1e1;
+}
+
+/* radio buttons */
+
+#pgr .radioAsButton .mat-radio-container {
+  display: none;
+}
+
+#pgr app-type-radio .mat-radio-group {
+  height: 3rem;
+}
+
+/* inputs */
+
+// moved here because it is going to be used in multiple components
+#pgr mat-form-field .mat-form-field-ripple {
+  background-color: transparent;
+}
+
+#pgr mat-form-field {
+  height: 3.125rem;
+  max-width: 520px;
+  width: 100%;
+  border-radius: 0.25rem;
+  color: $copy-text;
+  border: 1px solid var(--neutral-light);
+  margin: 1rem 0 .5rem 0;
+  padding: 0 1rem;
+  padding-bottom: 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  overflow: visible;
+  background-color: var(--neutral-white);
+  box-sizing: border-box;
+}
+
+#pgr mat-form-field.isDate {
+  width: 26.875rem;
+}
+
+#pgr .mat-input-element {
+  font-size: 1.5rem;
+  line-height: 2.5rem;
+  vertical-align: unset;
+  margin-top: .2rem;
+}
+
+#pgr mat-form-field:focus,
+#pgr mat-form-field.has-focus,
+#pgr mat-form-field.mat-focused {
+  border: 1.75px solid var(--brand-primary);
+  outline: none;
+}
+
+#pgr mat-form-field.success {
+  border: 1px solid var(--brand-primary);
+}
+
+#pgr mat-form-field.success .mat-input-element,
+#pgr mat-form-field.success .mat-icon {
+  color: var(--brand-primary);
+}
+
+#pgr mat-form-field.alert {
+  border: 1px solid var(--brand-alert);
+}
+
+#pgr mat-form-field.alert .mat-input-element,
+#pgr mat-form-field.alert .mat-icon {
+  color: var(--brand-alert);
+}
+
+#pgr .mat-form-field button.mat-icon-button {
+  margin: 0 0 0 0;
+}
+
+#pgr .mat-form-field-suffix .mat-datepicker-toggle-default-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--brand-primary);
+  margin-top: -.25rem;
+}
+
+#pgr .mat-form-field.mat-focused .mat-form-field-suffix {
+  color: var(--brand-primary);
+}
+
+#pgr .mat-form-field .mat-form-field-label {
+  top: 1.55rem;
+}
+
+//floats label both in focused and data entered states
+#pgr .mat-form-field.mat-form-field-should-float .mat-form-field-label {
+  top: 1.25rem;
+}
+
+#pgr .mat-form-field.mat-focused {
+  color: var(--brand-primary);
+}
+
+/* mat-calendar styling */
+.mat-calendar-header {
+  background-color: var(--brand-primary);
+  color: var(--neutral-white);
+}
+
+/* select */
+
+#pgr app-type-select .mat-form-field:not(.mat-form-field-should-float) .mat-form-field-label {
+  position: relative;
+  top: -0.05rem;
+  left: -1rem;
+}
+
+.mat-form-field-type-mat-select {
+  width: 48rem;
+  height: 3rem;
+  color: var(--brand-primary);
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background-color: var(--neutral-white);
+  // box-shadow: $box-shadow-primary;
+}
+
+.mat-form-field-type-mat-select mat-placeholder {
+  color: var(--neutral-black);
+}
+
+.mat-form-field-type-mat-select:hover,
+.mat-form-field-type-mat-select:focus {
+  border: 1px solid var(--brand-primary);
+  // box-shadow: 0 0 1px 0 rgba(1, 104, 224, 1), 0 2px 3px 0 rgba(0, 0, 0, .44);
+}
+
+.mat-input-infix {
+  height: 3rem;
+}
+
+.mat-select {
+  margin-top: 14px;
+  height: 1.5rem;
+}
+
+div.mat-select-arrow {
+  width: 3rem;
+  height: 3rem;
+  border-top: 0 none transparent;
+  border-right: 0 none transparent;
+  border-left: 0 none transparent;
+  background-image: url(assets/images/down-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-color: #F3F9FC;
+  position: relative;
+  right: 0;
+  top: 0;
+  margin-top: -1rem;
+  margin-right: -1rem;
+  border-radius: 0 4px 4px 0;
+  border-left: 1px solid var(--neutral-light);
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+  margin-top: -14px;
+  height: 2.875rem;
+}
+
+div.mat-select-value {
+  color: var(--brand-primary);
+}
+
+.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label {
+  transform: translateY(-1.48125em) scale(.75) perspective(100px) translateZ(.001px);
+  color: var(--neutral-cool-dark);
+}
+
+mat-placeholder {
+  color: var(--neutral-cool-dark);
+}
+
+.mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+  color: var(--neutral-white);
+  background: var(--brand-primary);
+}
+
+.mat-select-panel .mat-option:hover,
+#pgr .mat-option.mat-active {
+  color: var(--neutral-white);
+}
+
+#pgr .mat-option.mat-active {
+  background-color: var(--brand-primary);
+}
+
+#pgr .mat-option:hover:not(.mat-option-disabled) {
+  background-color: var(--brand-primary); // using this selector set to override material
+}
+
+/* checkboxes */
+
+#pgr .mat-checkbox {
+  font-size: 1rem;
+  margin: 1rem 0 0 0;
+  outline: none;
+}
+
+#pgr .mat-checkbox .mat-checkbox-layout {
+  display: flex;
+  align-items: center;
+}
+
+#pgr .mat-checkbox-inner-container {
+  height: 2rem;
+  width: 2rem;
+}
+
+#pgr .mat-checkbox-frame {
+  border-radius: 1rem;
+}
+
+#pgr .mat-checkbox-checked .mat-checkbox-frame {
+  border: 0px solid transparent;
+}
+
+#pgr .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  border-radius: 1rem;
+  background-color: var(--brand-primary) !important; // TODO refactor!!!!!!!!!!!!
+}
+
+/* underline containers */
+
+#pgr app-container-underline p,
+#pgr app-container-underline ul {
+  color: $copy-text;
+}
+
+#pgr .mat-expansion-panel-body {
+  padding: 1.5rem 1rem 1rem 0;
+  ul {
+    margin: 0;
+    padding: 0;
+    font-size: 1.25rem;
+  }
+}
+
+/* quotes page */
+
+.quote-divider,
+.underline-divider {
+  background-color: #9b9b9b;
+  height: 1px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80vw;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+#quotePage .left,
+#quotePage h4 {
+  color: $copy-text;
+}
+
+#quotePage h4 {
+  font-size: 1.375rem;
+}
+
+#quotePage .additional-price {
+  font-size: 1.125rem;
+}
+
+#quotePage .mat-expansion-panel-body ul {
+  font-size: 1rem;
+}
+
+#pgr #quotePage p {
+  color: $copy-text;
+}
+
+#pgr #quotePage .caption {
+  color: var(--neutral-light);
+}
+
+#pgr #quotePage mat-icon.caption {
+  text-align: center;
+  margin-bottom: -5px;
+}
+
+#pgr #quotePage .mat-icon-quote-offset {
+  margin: 0 .25rem 0 -2.2rem;
+  color: var(--brand-primary);
+  height: 32px;
+  width: 32px;
+  font-size: 32px;
+}
+
+/* pgr logo */
+.pgr-logo {
+  background-repeat: no-repeat;
+}
+
+.pgr-logo {
+  background-image: url(/assets/images/PGR_Small_Business.svg);
+  width: 169px;
+  height: 34px;
+  margin-left: 24px;
+}
+
+/* main navigation */
+
+.main-nav {
+  z-index: 5;
+}
+
+app-menu-text {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-text {
+  -webkit-padding-start: 0;
+  width: 90%;
+}
+
+#pgr .main-nav {
+  background-color: var(--brand-light);
+  color: var(--neutral-black);
+  margin-bottom: 1rem;
+  overflow: visible;
+  font-weight: 500;
+}
+
+#pgr .main-nav .sticky-header {
+  width: 100vw;
+  background-color: var(--brand-light);
+  position: fixed;
+  z-index: 1;
+}
+
+#pgr .main-nav .left {
+  width: 80vw;
+  margin-top: 33px;
+}
+
+#pgr .left div:first-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+#pgr .left nav {
+  width: auto;
+  overflow: scroll;
+}
+
+#pgr .main-nav .right {
+  min-width: fit-content;
+  margin-top: 22px;
+}
+
+#pgr .menu-text:first-child {
+  margin-left: 2rem;
+}
+
+#pgr .menu-text:last-child {
+  margin-right: 2rem;
+}
+
+
+/* navigation section header */
+
+app-container-section-header {
+  position: relative;
+}
+
+.main-nav .sticky-sub-header {
+  z-index: 1;
+  width: 100vw;
+  margin: 1rem 0 1rem 12rem;
+  position: fixed;
+  top: 4rem;
+  margin-bottom: 5rem;
+  h1 {
+    color: var(--neutral-black);
+    font-weight: 500;
+  }
+}
+
+/* main content for each page has a top distance we need to apply */
+.page-content {
+  position: relative;
+  top: 18rem;
+  z-index: 0;
+}
+
+.page-content p {
+  color: $copy-text;
+  font-size: 1.375rem;
+}
+
+.page-content p.caption {
+  font-size: .875rem;
+}
+
+/* overview page */
+#overviewPage h3 {
+  font-size: 1.625rem;
+  font-weight: 600;
+}
+
+#overviewPage .overview-next ul li {
+  font-weight: 400;
+  font-size: 1.375rem;
+  color: $copy-text;
+}
+
+/* styled multi-select */
+
+.styled-multiselect {
+  border: 1px solid #979797;
+  border-radius: 10px;
+  padding: 0;
+  margin: 2rem 0;
+  // box-shadow: $box-shadow-secondary;
+}
+
+.styled-multiselect ul {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  -webkit-padding-start: 0;
+}
+
+.styled-multiselect ul li {
+  border-bottom: 1px solid #979797;
+  padding: .5rem 2rem;
+}
+
+.styled-multiselect ul li:hover {
+  background-color: #CCE5F1;
+}
+
+.styled-multiselect ul li:first-child:hover {
+  border-radius: 10px 10px 0 0;
+}
+
+.styled-multiselect ul li:last-child:hover {
+  border-radius: 0 0 10px 10px;
+}
+
+.styled-multiselect ul li:last-child {
+  border-bottom: 0px solid transparent;
+}
+
+#pgr .styled-multiselect ul li .mat-checkbox {
+  margin: 0 0 0 0;
+}
+
+.styled-multiselect ul li .mat-checkbox-label {
+  font-size: 1.375rem;
+  color: $copy-text;
+  font-weight: 400;
+}
+
+#pgr .styled-multiselect .mat-checkbox-inner-container {
+  height: 4.375rem;
+  width: 4.375rem;
+}
+
+#pgr .styled-multiselect .mat-checkbox-frame {
+  border-radius: 2.1875rem;
+  background-color: #CCE5F1;
+  border: 0px solid transparent;
+}
+
+/* help tooltip icon */
+
+.help-tooltip svg {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.action-tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+// show the tooltip on hover
+.action-tooltip:hover .help-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.action-tooltip svg {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-left: .5rem;
+}
+
+.help-tooltip svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+// coverage icon hovers
+
+.coverage-icon:hover .fill-dark-blue,
+.container-coverage-checked svg.coverage-icon .fill-dark-blue {
+  fill: #91B0BF;
+}
+
+.coverage-icon:hover .fill-white,
+.container-coverage-checked svg.coverage-icon .fill-white {
+  fill: #ffffff;
+}
+
+.coverage-icon:hover .fill-black,
+.container-coverage-checked svg.coverage-icon .fill-black {
+  fill: #000000;
+}
+
+.coverage-icon:hover .fill-light-blue,
+.container-coverage-checked svg.coverage-icon .fill-light-blue {
+  fill: #D1E2E5;
+}
+
+.coverage-icon:hover .fill-peach,
+.container-coverage-checked svg.coverage-icon .fill-peach {
+  fill: #dd9f62;
+}
+
+.coverage-icon:hover .fill-orange,
+.container-coverage-checked svg.coverage-icon .fill-orange {
+  fill: #ffcc85;
+}

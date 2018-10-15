@@ -1,0 +1,16 @@
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="{{ placeholder }}" attr.aria-label="{{ placeholder }}" [matAutocomplete]="auto" [formControl]="businessCategoryCtrl">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+          <img style="vertical-align:middle;" aria-hidden src="{{state.flag}}" height="25" />
+          <span>{{ state.name }}</span>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+
+
+  <!-- Copyright 2018 Google Inc. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at http://angular.io/license -->

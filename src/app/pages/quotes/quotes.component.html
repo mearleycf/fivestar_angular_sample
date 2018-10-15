@@ -1,0 +1,138 @@
+<app-template-base sectionName="Quote" id="quotePage" currentProgress="100">
+  <div class="page-content flex center is-column marginLeftTenPercent">
+    <app-container-underline isFlat="true" left="Recommended Carrier: Hiscox" right="Quote Total: {{ quote.productQuote.premium.annual }}">
+      <div content>
+        <div class="flex is-column start">
+          <h2>Pay Monthly: {{ this.quote.productQuote.premium.monthly }}*</h2>
+          <p>* Initial payment of ${{ this.quote.productQuote.premium.downPayment }} and then ${{ this.quote.productQuote.premium.monthly
+            }} for {{ this.quote.productQuote.premium.numberOfInstallments }} months.</p>
+        </div>
+        <div class="flex is-row space-between align-end">
+          <h2 class="marginBottom0">One Annual Payment: ${{ this.quote.productQuote.premium.annual }}</h2>
+          <img src="/assets/images/hiscox.svg" alt="Hiscox Logo">
+        </div>
+      </div>
+    </app-container-underline>
+
+    <!-- divider from design -->
+    <div class="quote-divider"></div>
+    <!-- end divider -->
+
+    <app-container-underline isFlat="true" left="Products Quoted">
+      <div content>
+        <div class="flex is-row space-between">
+          <h4>Selected Coverage: General Liability</h4>
+          <h4>${{ this.quote.productQuote.premium.annual }}/year</h4>
+        </div>
+      </div>
+    </app-container-underline>
+
+    <app-container-underline isFlat="true" left="Your quote includes liability coverage for:">
+      <div content>
+        <ul>
+          <li>Damage to someone else's property</li>
+          <li>Damage to properties rented to you (e.g. a fire)</li>
+          <li>Bodily injury to a third party including related medical expenses</li>
+          <li>Claims of personal injury including libel and slander</li>
+          <li>Actions of your employees, including temporary staff</li>
+        </ul>
+      </div>
+    </app-container-underline>
+
+    <app-container-underline isFlat="true" left="Your quote also includes these optional coverages:">
+      <div content>
+        <ul>
+          <li class="flex is-row space-between">
+            <div>Certified Act of Terrorism coverage</div>
+            <div class="flex is-row center align-center">
+              <p class="marginBottom0 additional-price">$21.00</p>
+              <mat-icon>add</mat-icon>
+            </div>
+          </li>
+          <div class="flex is-row align-center">
+            <mat-icon class="caption">add</mat-icon>
+            <p class="caption marginBottom0">Optional coverage costs are already included in quote total</p>
+          </div>
+        </ul>
+      </div>
+    </app-container-underline>
+
+    <div class="flex width80vw is-column margin0auto">
+      <h2>Quote Details for {{ this.client.businessSummary.businessName }}</h2>
+      <div class="flex is-row align-center">
+        <mat-icon class="mat-icon-quote-offset">new_releases</mat-icon>
+        <h4>Please Review Your Information</h4>
+      </div>
+      <p>Upon purchase your application process will finalize with Hiscox</p>
+    </div>
+
+    <app-container-underline isFlat="true" left="Contact Info">
+      <div content>
+        <div class="flex is-row">
+          <div class="flex is-column width30vw">
+            <p>
+              <strong>First Name: </strong>{{ this.client.contactInfo.firstName }}</p>
+            <p>
+              <strong>Last Name: </strong>{{ this.client.contactInfo.lastName }}</p>
+          </div>
+          <div class="flex is-column">
+            <p>
+              <strong>Email: </strong>{{ this.client.contactInfo.emailAddress }}</p>
+            <p>
+              <strong>Phone Number: </strong>{{ this.client.contactInfo.phoneNumber }}</p>
+          </div>
+        </div>
+      </div>
+    </app-container-underline>
+
+    <app-container-underline isFlat="true" left="Business Summary">
+      <div content>
+        <p>
+          <strong>Business Name: </strong>{{ this.client.businessSummary.businessName }}</p>
+        <p>
+          <strong>Business Start Year: </strong>{{ this.client.businessSummary.businessStartYear }}</p>
+        <p>
+          <strong>Business Type: </strong>{{ this.client.businessSummary.businessType }}</p>
+        <p>
+          <strong>Projected Annual Revenue: </strong>{{ this.client.businessSummary.projectedAnnualRevenue }}</p>
+        <p>
+          <strong>Industry: </strong>{{ this.client.businessSummary.industry }}</p>
+        <p>
+          <strong>Sub Industry: </strong>{{ this.client.businessSummary.subIndustry }}</p>
+        <p>
+          <strong>Website: </strong>{{ this.client.businessSummary.website }}</p>
+      </div>
+    </app-container-underline>
+
+    <app-container-underline isFlat="true" left="Locations">
+      <div content>
+        <p>
+          <strong>Location Details for: </strong>5134 Blazer Parkway, Dublin, OH 43017</p>
+        <p>
+          <strong>Number of Full Time Employees: </strong>2</p>
+        <p>
+          <strong>Number of Part-Time Employees: </strong>0</p>
+        <p>
+          <strong>Projected Annual Payroll: </strong>,000</p>
+      </div>
+    </app-container-underline>
+
+    <app-container-underline isFlat="true" left="Business Owner's Policy (BOP) Info">
+      <div content>
+        <p>
+          <strong>Location Details for: </strong>5134 Blazer Parkway, Dublin, OH 43017</p>
+        <p>
+          <strong>Building Type: </strong>Rent/Lease</p>
+        <p>
+          <strong>Construction: </strong>Joisted Masonry</p>
+        <p>
+          <strong>Automatic Sprinklers: </strong>Yes</p>
+      </div>
+    </app-container-underline>
+
+    <div class="flex is-row center">
+      <app-advance-button buttonText="Purchase Policy"></app-advance-button>
+    </div>
+  </div>
+
+</app-template-base>

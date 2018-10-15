@@ -1,0 +1,42 @@
+@import '~@angular/material/theming';
+
+$mat-blue: (
+    50: #e1edfb,
+    100: #b3d2f6,
+    200: #80b4f0,
+    300: #4d95e9,
+    400: #277fe5,
+    500: #0168e0,
+    600: #0160dc,
+    700: #0155d8,
+    800: #014bd3,
+    900: #003acb,
+    A100: #f3f6ff,
+    A200: #c0ceff,
+    A400: #8da5ff,
+    A700: #7491ff,
+    contrast: (
+        50: $black-87-opacity,
+        100: $black-87-opacity,
+        200: $black-87-opacity,
+        300: $black-87-opacity,
+        400: $black-87-opacity,
+        500: white,
+        600: white,
+        700: white,
+        800: $white-87-opacity,
+        900: $white-87-opacity,
+        A100: $black-87-opacity,
+        A200: white,
+        A400: white,
+        A700: white,
+    )
+);
+
+$pgr-primary: mat-palette($mat-blue);
+$pgr-accent: mat-palette($mat-light-blue, 400, 100, 800);
+$pgr-warn: mat-palette($mat-red);
+
+$pgr-theme: mat-light-theme($pgr-primary, $pgr-accent, $pgr-warn);
+
+@include angular-material-theme($pgr-theme);

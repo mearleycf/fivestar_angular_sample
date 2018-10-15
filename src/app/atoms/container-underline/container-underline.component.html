@@ -1,0 +1,11 @@
+<div class="flex is-column width80vw margin0auto">
+  <mat-expansion-panel [expanded]="true" [hideToggle]="true" [ngClass]="{'mat-elevation-z0': cardIsFlat()}">
+    <mat-expansion-panel-header>
+      <h4 class="flex is-row space-between fill-available">
+        <div class="left">{{ this.left }}</div>
+        <div class="right">{{ this.right }}</div>
+      </h4>
+    </mat-expansion-panel-header>
+    <ng-content select="[content]"></ng-content>
+  </mat-expansion-panel>
+</div>

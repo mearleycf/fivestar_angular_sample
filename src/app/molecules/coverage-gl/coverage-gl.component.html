@@ -1,0 +1,44 @@
+<mat-card class="container-coverage mat-elevation-z0" [ngClass]="{'container-coverage-checked':this.checkedState}">
+    <mat-card-header>
+      <div class="flex is-row start fill-available">
+        <div *ngIf="checkboxIsNotChecked()" class="flex center align-center checkbox-unchecked">
+          <mat-icon>add</mat-icon>
+        </div>
+        <mat-checkbox (change)="modifyParentStyle()" [disableRipple]="true"></mat-checkbox>
+        <h2>General Liability</h2>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="flex isRow space-between">
+        <div>
+          <div class="flex is-column coverage-content">
+            <div>
+              <h3 class="recommend">Why we recommend it</h3>
+              <p>Accidents, injuries, and lawsuits happen. General Liability protects your business for those ‘just in case’ moments, with coverage for medical bills and property damage.</p>
+
+              <h3 class="covers">What it covers</h3>
+              <ul class="flex wrap">
+                <li>Bodily injury & property damage</li>
+                <li>Personal & Advertising Injury</li>
+                <li>Products & completed operations</li>
+                <li>Medical bills</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flex is-column align-center coverages-right">
+          <div class="coverage-viewport" *ngIf="checkboxIsNotChecked(); else isChecked">
+            <app-asset-gl></app-asset-gl>
+          </div>
+          <ng-template #isChecked>
+            <div class="coverage-viewport">
+              <app-asset-gl></app-asset-gl>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-footer *ngIf="displayFooter()">
+      <ng-content select="[footer]"></ng-content>
+    </mat-card-footer>
+  </mat-card>

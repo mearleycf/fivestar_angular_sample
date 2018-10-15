@@ -1,0 +1,57 @@
+.mat-radio-group * {
+  display: flex;
+}
+
+.radioAsButtonContainer {
+  position: relative;
+  top: -1rem;
+}
+
+.mat-radio-container {
+  display: none;
+}
+
+.mat-radio-button {
+  width: 0;
+}
+
+label {
+  width: auto;
+}
+
+label.radioAsButton .mat-radio-button~span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  white-space: nowrap;
+  background-color: var(--neutral-white);
+  color: var(--neutral-black);
+  // box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.4), 0px 2px 3px 0px rgba(0,0,0,.24);
+  box-shadow: 0 0 0 2px transparent;
+  border: 1px solid var(--neutral-light);
+  max-width: 15rem;
+  width: min-content;
+  height: 4.85rem;
+  border-radius: 2px;
+  // border: 1px solid transparent;
+  margin: 1.25rem .75rem 0 0;
+  padding: .35rem 2.5rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+label.radioAsButton .mat-radio-button~span:hover {
+  border: 1px solid var(--brand-primary);
+  box-shadow: 0 0 0 1px var(--brand-primary); // removes the fields jumping on hover
+  box-sizing: border-box;
+  color: var(--brand-primary);
+}
+
+label.radioAsButton .mat-radio-button.mat-radio-checked~span {
+  background-color: var(--brand-primary);
+  color: var(--neutral-white);
+  border: 1px solid var(--brand-primary);
+  // font-weight: 600;
+}

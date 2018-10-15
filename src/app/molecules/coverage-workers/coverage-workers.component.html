@@ -1,0 +1,42 @@
+<mat-card class="container-coverage mat-elevation-z0" [ngClass]="{'container-coverage-checked':this.checkedState}">
+    <mat-card-header>
+      <div class="flex is-row start fill-available">
+        <div *ngIf="checkboxIsNotChecked()" class="flex center align-center checkbox-unchecked">
+          <mat-icon>add</mat-icon>
+        </div>
+        <mat-checkbox (change)="modifyParentStyle()" [disableRipple]="true"></mat-checkbox>
+        <h2>Workers Compensation</h2>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="flex isRow space-between">
+        <div>
+          <div class="flex is-column coverage-content">
+            <div>
+              <h3 class="recommend">Why we recommend it</h3>
+              <p>Workers comp protects your business from medical bills and a portion of lost wages for an employee who becomes injured or ill on the job (e.g. lifting heavy equipment, fire or explosion, slipping on a wet surface, etc.)</p>
+
+              <h3 class="covers">What it covers</h3>
+              <ul class="flex wrap">
+                <li>Sick on the job</li>
+                <li>Hurt on the job</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flex is-column align-center coverages-right">
+          <div class="coverage-viewport" *ngIf="checkboxIsNotChecked(); else isChecked">
+            <app-asset-workers></app-asset-workers>
+          </div>
+          <ng-template #isChecked>
+            <div class="coverage-viewport">
+                <app-asset-workers></app-asset-workers>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-footer *ngIf="displayFooter()">
+      <ng-content select="[footer]"></ng-content>
+    </mat-card-footer>
+  </mat-card>

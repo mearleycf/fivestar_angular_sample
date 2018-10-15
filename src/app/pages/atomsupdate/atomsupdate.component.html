@@ -1,0 +1,113 @@
+<app-template-base sectionName="Atoms" id="atomsUpdatePage" currentProgress="33.3">
+  <div class="page-content flex center is-column marginLeftTenPercent">
+
+    <h2>Atoms</h2>
+
+    <h3>Standard Input Field</h3>
+    <div class="underline-divider"></div>
+    <app-container-card isFlat="true">
+      <div content>
+        <div class="question-container flex align-center">
+          <p class="question">This is the question</p>
+        </div>
+        <app-type-input isPlaceholder="Estimated Subcontractor Salary"></app-type-input>
+      </div>
+    </app-container-card>
+
+    <h3>Multiple Option Radio Field</h3>
+    <div class="underline-divider"></div>
+    <app-container-card isFlat="false">
+      <div content>
+        <p class="question">A radio option question (note--all radio options are currently rendered as buttons; there is no option to render
+          radio options as the standard radio circle)</p>
+        <app-type-radio [radioButtons]="['Sole Proprietor', 'LLC', 'Joint Venture', 'Partnership', 'Trust']"></app-type-radio>
+      </div>
+    </app-container-card>
+
+    <h3>Yes/No Option Radio Field</h3>
+    <div class="underline-divider"></div>
+    <app-container-card>
+      <div content>
+        <p class="question">A radio option question (Yes/No example)</p>
+        <app-type-radio [radioButtons]="['Yes', 'No']"></app-type-radio>
+      </div>
+    </app-container-card>
+
+    <h3>Standard Select Field</h3>
+    <div class="underline-divider"></div>
+    <app-container-card>
+      <div content>
+        <p class="question">A standard select question (not autocomplete)</p>
+        <app-type-select></app-type-select>
+      </div>
+    </app-container-card>
+
+    <h3>Autocomplete Select Field</h3>
+    <div class="underline-divider"></div>
+    <app-container-card>
+      <div content>
+        <p class="question">This is an autocomplete field. </p>
+        <app-type-autocomplete placeholder="State" isInputType="text"></app-type-autocomplete>
+      </div>
+    </app-container-card>
+
+    <h3>Singular Checkbox Field</h3>
+    <div class="underline-divider"></div>
+    <app-container-card>
+      <div content>
+        <p class="question">This checkbox is singular--i.e. only one checkbox per question/answer</p>
+        <app-type-checkbox></app-type-checkbox>
+      </div>
+    </app-container-card>
+
+    <h3>Date Input Field</h3>
+    <div class="underline-divider"></div>
+    <app-container-card>
+      <div content>
+        <p class="question">There are additional controls that can be put on the date that hvaen't been implemented yet, like minimum start date
+          or maximum end date.</p>
+        <app-type-date isPlaceholder="Start Date (mm/dd/yyyy)"></app-type-date>
+      </div>
+    </app-container-card>
+
+    <h3>Tooltip</h3>
+    <div class="underline-divider"></div>
+
+    <p>TBD</p>
+
+    <h3>Advance Button</h3>
+    <div class="underline-divider"></div>
+    <app-container-card>
+      <div content>
+        <app-advance-button buttonText="Click to Next Page" navigateTo="/url/here"></app-advance-button>
+      </div>
+    </app-container-card>
+
+    <h3>Coverage SVG images</h3>
+    <div class="underline-divider"></div>
+    <div class="flex is-row">
+      <div class="atoms-page-viewport">
+        <app-asset-pl></app-asset-pl>
+      </div>
+      <div class="atoms-page-viewport">
+        <app-asset-gl></app-asset-gl>
+      </div>
+      <div class="atoms-page-viewport">
+        <app-asset-bop></app-asset-bop>
+      </div>
+      <div class="atoms-page-viewport">
+        <app-asset-workers></app-asset-workers>
+      </div>
+      <div class="atoms-page-viewport">
+        <app-asset-property></app-asset-property>
+      </div>
+    </div>
+    <h3>Coverage Cards</h3>
+    <div class="underline-divider"></div>
+    <app-coverage-pl></app-coverage-pl>
+    <app-coverage-gl></app-coverage-gl>
+    <app-coverage-workers></app-coverage-workers>
+    <app-coverage-property></app-coverage-property>
+    <app-coverage-bop></app-coverage-bop>
+  </div>
+</app-template-base>

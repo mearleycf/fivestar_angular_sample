@@ -1,0 +1,16 @@
+<app-template-base>
+  <app-container-card isFlat="true">
+    <div content>
+      <p class="question">Contact Information</p>
+      <app-type-input isPlaceholder="First Name" isInputType="text"></app-type-input>
+      <app-type-input isPlaceholder="Last Name" isInputType="text"></app-type-input>
+      <app-type-autocomplete isPlaceholder="State" isInputType="text"></app-type-autocomplete>
+      <app-type-date isPlaceholder="Birth Date"></app-type-date>
+      <app-type-input isPlaceholder="Email Address" isInputType="email"></app-type-input>
+      <app-type-input isPlaceholder="Phone Number" isInputType="tel"></app-type-input>
+      <app-type-checkbox></app-type-checkbox>
+    </div>
+  </app-container-card>
+
+<app-advance-button buttonText="Continue" [navigateTo]="['examples/march21p2']"></app-advance-button>
+</app-template-base>

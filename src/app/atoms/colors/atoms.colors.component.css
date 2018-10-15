@@ -1,0 +1,22 @@
+mat-card.color-chit {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: .5rem;
+    width: 9rem;
+}
+
+.color-chit mat-card-content.mat-card-content div { 
+    height: 5rem;
+    width: 100%;
+    margin: 0 0 1rem 0;
+}
+
+.color-chit mat-card-content.mat-card-content p {
+    height: 32px;
+    font-size: smaller;
+}
+
+mat-card.color-chit mat-card-content.mat-card-content .neutral-white {
+    border: .5px solid rgba(200,200,200,.35)
+}

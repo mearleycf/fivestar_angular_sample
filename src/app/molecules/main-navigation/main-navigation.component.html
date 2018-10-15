@@ -1,0 +1,18 @@
+<div class="main-nav flex space-between width100vw headerImage is-column">
+  <div class="flex is-row space-between align-start width100vw">
+    <div class="flex is-column sticky-header">
+      <div class="flex is-row width97vw">
+        <div class="flex is-column center align-center pgr-logo-container">
+          <app-pgr-logo></app-pgr-logo>
+        </div>
+        <nav class="flex margin0auto is-column">
+          <app-menu-text></app-menu-text>
+          <app-progress-bar currentProgress="{{ currentProgress }}"></app-progress-bar>
+        </nav>
+      </div>
+    </div>
+  </div>
+<app-container-section-header sectionName="{{ sectionName }}"></app-container-section-header>
+</div>
+<app-container-quote-number quoteNumber="1234567890"></app-container-quote-number>
+<!-- TODO update aria markup -->

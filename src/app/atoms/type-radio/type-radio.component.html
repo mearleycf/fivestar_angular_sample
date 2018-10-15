@@ -1,0 +1,8 @@
+<mat-radio-group [align]="'start'" class="flex wrap">
+  <div *ngFor="let radio of radioButtons" class="radioAsButtonContainer">
+    <label class="radioAsButton">
+      <mat-radio-button value="{{ radio }}"></mat-radio-button>
+      <span>{{ radio }}</span>
+    </label>
+  </div>
+</mat-radio-group>

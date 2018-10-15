@@ -1,0 +1,27 @@
+<app-template-base sectionName="Business Overview" id="overviewPage" currentProgress="16.6">
+  <div class="page-content flex center is-column marginLeftTenPercent">
+    <div class="flex is-column width80vw center margin0auto">
+      <h2>Business Overview</h2>
+      <div class="underline-divider"></div>
+      <h3>We'll start with you and your business...</h3>
+      <p>Consider these questions the first pass at building your policy.</p>
+      <p>This helps you consider the risks you're shouldering solo, so you can offload some--or all--to your insurer. Don't
+        overthink your responses, there is no right or wrong.</p>
+      <p>&nbsp;</p>
+      <div class="underline-divider"></div>
+    </div>
+    <div class="flex is-column width80vw center margin0auto">
+      <mat-label>Keyword describing your business, i.e. Contractor, Trucking, etc.</mat-label>
+      <app-type-autocomplete placeholder="Type of Business" ctrlName="businessCategoryCtrl"></app-type-autocomplete>
+    </div>
+    <div class="flex is-column width80vw center margin0auto">
+      <h3>Tell us more about your business.</h3>
+      <p>(Select all that apply. If none of these apply to you, that's OK too.)</p>
+    </div>
+    <app-type-checkbox-group></app-type-checkbox-group>
+
+    <div class="flex is-row center">
+      <app-advance-button buttonText="Next, Coverages" [navigateTo]="['demo/coverages']"></app-advance-button>
+    </div>
+  </div>
+</app-template-base>

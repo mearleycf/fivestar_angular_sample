@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="13px" height="8px" viewBox="0 0 13 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>Disclosure</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Atoms" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Nav-Header-and-Remaining-Still-Needs-Created" transform="translate(-365.000000, -1067.000000)" fill="#0168E0">
+            <g id="Group-26" transform="translate(72.000000, 775.000000)">
+                <g id="Group-18" transform="translate(0.000000, 266.000000)">
+                    <polygon id="Disclosure" transform="translate(299.500000, 30.000000) rotate(90.000000) translate(-299.500000, -30.000000) " points="295.5 25 297 23.5 303.5 30 297 36.5 295.5 35 300.5 30"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
